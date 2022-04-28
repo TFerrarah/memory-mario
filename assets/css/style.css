@@ -1,0 +1,119 @@
+/* userAgent sanitizing */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: unset;
+}
+
+/* color variables */
+
+:root{
+    --background: #071108;
+    --text-light: #F8EEF7;
+    --success: #16C60C;
+    --danger: #E74856;
+}
+
+/* main container */
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    padding-top: 5%;
+    padding-bottom: 1rem;
+
+    background: var(--background);
+    color: var(--text-light);
+    font-family: 'Menlo', monospace;
+}
+
+/* title */
+
+main h1{
+    font-family: 'Menlo';
+    font-size: 3rem;
+}
+
+/* titlescreen */
+
+.titleScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* options */
+
+.titleScreen .options{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.options .option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* play button */
+
+.titleScreen input[type="submit"]{
+    background: transparent;
+    
+    font-family: 'Menlo', monospace;
+    
+    border: 0.2rem solid var(--text-light);
+    border-radius: 5rem;
+    padding: 1rem 5rem;
+
+    cursor: pointer;
+
+    color: var(--text-light);
+    font-size: 2rem;
+}
+
+/* lower watermark */
+
+main span.watermark{
+    font-family: 'Menlo';
+    font-size: 1rem;
+    opacity: 40%;
+}
+
+.watermark a{
+    opacity: 60%;
+}
+
+/* typing cursor */
+
+h1::after {
+    content: "";
+    display: inline-block;
+    background-color: var(--text-light);
+    opacity: 50%;
+    vertical-align: bottom;
+    width: 1.5rem;
+    height: 0.5rem;
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }

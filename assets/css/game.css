@@ -134,7 +134,9 @@ main span.watermark {
   background-color: hsla(51, 100%, 50%, 1);
 
   font-size: 7rem;
-  border: 5px solid #ffffff;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white;
   border-radius: 2rem;
 
   color: white;
@@ -172,11 +174,13 @@ main span.watermark {
   gap: 1rem;
 
   width: 60%;
+
+  transition: linear 0.5s;
 }
 
 /* cards matched */
 
-.card.matched{
+.matched{
   border-color: var(--success);
   transition: linear;
 }
@@ -221,4 +225,57 @@ main span.watermark {
   100% {
     transform: translate(0, 0);
   }
+}
+
+/* time text blink animation */
+.blink{
+  animation: blink 1.5s steps(1, start) infinite;
+}
+
+@keyframes blink{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+/* win screen */
+
+.win-screen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.win-screen h1{
+  font-size: 5rem;
+  color: var(--text-light);
+}
+
+.win-screen h3{
+  font-size: 1.5rem;
+  color: var(--text-light);
+  opacity: 60%;
+}
+
+.win-screen a{
+  background: transparent;
+
+  font-family: "Menlo", monospace;
+
+  border: 0.2rem solid var(--text-light);
+  border-radius: 5rem;
+  padding: 1rem 5rem;
+
+  cursor: pointer;
+
+  color: var(--text-light);
+  font-size: 2rem;
 }
